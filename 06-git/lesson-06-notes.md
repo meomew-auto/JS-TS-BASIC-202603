@@ -134,3 +134,5 @@ git checkout main
 git checkout: chuyển sang 1 nhánh khác
 
 tôi đã code xong ở nhánh mới
+
+tôi đã code xong ở nhánh 2
