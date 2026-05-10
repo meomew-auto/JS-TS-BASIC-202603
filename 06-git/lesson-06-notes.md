@@ -64,3 +64,29 @@
 có nhiều môi trường
 dev: main -> nhánh này là nhánh chính chạy ổn định -> khi làm việc người ta sẽ tạo ra 1 nhánh khác để làm việc để ko ảnh hưởng tới nhánh chính đang sử dụng -> sau khi code ổn định ở nhánh phụ -> chúng ta mới merge code -> vào nhánh chính -> để bổ sung thêm tính năng
 uat: main1
+
+Cách đặt tên commit
+
+- khi project có nhiều cmmit -> mình cần nhìn lịch sử để biết
+
+* hôm đó sửa gì
+* ai sửa
+* sẳ thêm tính năng gì
+
+- Công thức đơn giản nhất đặt tên
+
+* động từ + nội dung thay đổi
+
+ví dụ
+add login test
+fix login validation
+update git lesson
+remove unused locator
+cách chuyên nghiệp L khi quen hơn ta có thể dùng
+type: nội dung thay đổi
+feature(chức năng mới)
+
+docs: update git lesson
+feat: add product search flow
+test: add login test
+fix: correct login selector
