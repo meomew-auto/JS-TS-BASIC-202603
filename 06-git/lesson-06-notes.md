@@ -132,3 +132,5 @@ FLOW: quay về main -> pull code mới nhất -> tạo nhánh từ main
 
 git checkout main
 git checkout: chuyển sang 1 nhánh khác
+
+tôi đã code xong ở nhánh mới
