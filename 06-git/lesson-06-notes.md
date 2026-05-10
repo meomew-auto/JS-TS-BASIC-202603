@@ -96,3 +96,5 @@ f2541b4 2nd commit
 544d02d first commit
 
 HEAD -> Main: là vị trí mọi người đang đứng
+
+Muốn lấy thông tin về code mới nhất ta dùng git pull
