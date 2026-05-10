@@ -100,4 +100,6 @@ HEAD -> Main: là vị trí mọi người đang đứng
 Muốn lấy thông tin về code mới nhất ta dùng git pull
 
 sửa lần 2
-sửa lần 3 
+sửa lần 3
+
+main -> tạo nhánh mới -> sửa code -> commit -> push nhánh -> merge vào main -> push main
