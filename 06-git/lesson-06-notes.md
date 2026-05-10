@@ -102,4 +102,33 @@ Muốn lấy thông tin về code mới nhất ta dùng git pull
 sửa lần 2
 sửa lần 3
 
+ví dụ ngày A
+main có 10 dòng code
+
 main -> tạo nhánh mới -> sửa code -> commit -> push nhánh -> merge vào main -> push main
+
+bạn A: -> kéo code về -> tạo nhánh mới -> đẩy merge main -> lúc này main có 20 dòng
+bạn B: -> kéo code (1o dòng) -> bạn B ngày n sau khi main có 20 dòng mới merge -> HOÀN TOÀN OK
+-> trường hợp code bạn B sửa cùng 1 file với bạn A (sau khi update 20 dòng) => nó mới xảy ra conflict => resolve
+-> ko confict thì merege ok -> pull main về để có cả code của B -> và bắt đầu taoh nhánh mới code tiếp
+
+branch
+cách đặt tên ngắn gọn, ko dáu. ko có khoẳng trắn
+
+docs/git-lesson
+feat/product-search
+fix/
+tests/
+
+ko nên đặt
+nhánh mới
+test
+abc
+
+Trước khi tạo nhánh mớim nên quay về main
+lý do: nhánh mới sẽ tạo ra trên nhánh hiện tại
+Nếu đang đứng ở main -> nhánh mới sẽ lấy từ main
+FLOW: quay về main -> pull code mới nhất -> tạo nhánh từ main
+
+git checkout main
+git checkout: chuyển sang 1 nhánh khác
