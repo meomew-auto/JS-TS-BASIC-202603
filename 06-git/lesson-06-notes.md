@@ -138,3 +138,9 @@ tôi đã code xong ở nhánh mới
 tôi đã code xong ở nhánh 2
 
 check out về main -> và dùng git merge tên nhánh muốn merge
+
+xóa nhánh remote trên github
+git push origin --delete tên nhánh muốn xóa
+
+git branch -d
+git branch -D
