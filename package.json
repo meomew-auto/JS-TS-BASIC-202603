@@ -1,0 +1,28 @@
+{
+  "name": "202603-pw-js-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "esbuild": "^0.28.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.22.3",
+    "typescript": "^6.0.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meomew-auto/JS-TS-BASIC-202603.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/meomew-auto/JS-TS-BASIC-202603/issues"
+  },
+  "homepage": "https://github.com/meomew-auto/JS-TS-BASIC-202603#readme"
+}

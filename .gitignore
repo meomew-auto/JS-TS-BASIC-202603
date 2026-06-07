@@ -1,0 +1,5 @@
+.env
+demo-before-gitignore/
+*.log
+node_modules/
+.vscode/
