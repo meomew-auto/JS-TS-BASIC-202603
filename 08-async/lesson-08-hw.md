@@ -12,7 +12,7 @@ const KHO_HANG = {
   "Áo Thun": { gia: 150000, tonKho: 10 },
   "Quần Jean": { gia: 350000, tonKho: 5 },
   "Giày Sneaker": { gia: 800000, tonKho: 3 },
-  Mũ: { gia: 90000, tonKho: 0 },
+  "Mũ": { gia: 90000, tonKho: 0 },
 };
 
 // ----- ĐƠN HÀNG khách nhập dạng CHUỖI: "tên sản phẩm xSỐLƯỢNG" -----
