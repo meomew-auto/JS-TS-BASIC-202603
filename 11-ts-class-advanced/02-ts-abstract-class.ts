@@ -175,6 +175,7 @@ interface Runnable {
   run(): Promise<void>;
 }
 
+//Những hợp đồng phổ quát - có ích vì nhiều họ class khác nhau cùng cần kí hợp đồng đó
 //ai implmenet tao phai kiem tra dc ket qua
 interface Verifibable {
   verify(): boolean;
@@ -199,6 +200,10 @@ abstract class BaseTest {
 
   tearDown(): void {
     console.log(`Dong browser, don dep...`);
+  }
+
+  protected navigate(): void {
+    console.log("navigate");
   }
 
   //concrete method - ghi log test - moi test deu can
@@ -271,3 +276,69 @@ async function runTest() {
 
 runTest();
 //
+//lý do 1: Interface - có thể tái sử dụng mà ko cần extends
+//Nếu 2 class thuộc 2 hệ khác nhau thì ta nên dùng interface để đáp ứng sự tái sử dụng
+class ApiHealthCheck implements Verifibable {
+  verify(): boolean {
+    return true;
+  }
+}
+
+//lý do 2: Interface cho phép 1 class có nhiều vai trò
+// class CheckoutTest extends BaseTest implements Runnable, Verifibable {
+
+// }
+
+//ly do 3: iinterface giup cho viec mock testing
+
+//reguclass ko thể làm cha tốt nếu 1 tỏng các trường hợp
+class BasePage7 {
+  baseUrl = "abc.com";
+  constructor(protected path: string) {}
+  navigate(): void {}
+
+  //abstract isLoaded()
+}
+
+class LoginPage8 extends BasePage7 {
+  isLoaded(): boolean {
+    return true;
+  }
+}
+
+class CartPage extends BasePage7 {
+  addToCart(): void {}
+}
+
+///regular class làm cha khi cha đã hoàn chỉnh 100%. tự dùng đc 1 mình, và con chỉ thêm các tính năng chứ ko cần override
+class HttpClient {
+  constructor(protected baseUrl: string) {}
+
+  async get<T>(path: string): Promise<T> {
+    return {} as T;
+  }
+}
+
+class AuthHttpClient extends HttpClient {
+  constructor(
+    baseUrl: string,
+    private token: string,
+  ) {
+    super(baseUrl);
+  }
+  //thêm method mới - cha ko có
+
+  async getWithAuth<T>(path: string): Promise<T> {
+    return this.get<T>(path);
+  }
+}
+
+//cả cha và con đều dùng đọc lập
+
+//cha dùng  1 mình - api test đơn giản ko cần auth
+const simpleCleint = new HttpClient("abc");
+// await simpleCleint.get("abc");
+
+const authClient = new AuthHttpClient("abc", "abc");
+
+//over-engineering
