@@ -23,3 +23,13 @@ TypeScript type system: `typeof`, `keyof`, `as` và Generic
 - Type space (bản vẽ):
   - Dùng `as` để gán một “nhãn kiểu” mới cho biến.
   - Ví dụ: bảo TypeScript đừng coi nó là số nữa, mà hãy coi nó là chuỗi.
+
+Mô hình quản lý data test:
+Gom tất cả test data vào 1 nơi, truy cập qua namespace + key,
+hỗ trợ đa môi trường, có type-safe
+
+TEST DATA CATALOG
+Namespace: liên quan tới category
+Key: full,minimal
+
+-> getTestData('customers','full')

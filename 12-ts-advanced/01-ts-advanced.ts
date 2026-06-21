@@ -403,4 +403,60 @@ function printLoginResult(result: ApiResult<User3, LoginError>) {
   }
 }
 
-//Record<K, T>
+//thường kết hợp với constraints (extends)
+//Tkey bị ràng buộc chỉ đc là key của TObject
+//TObject đc suy luận từ obj truyền vào
+function getProperty<TObject, TKey extends keyof TObject>(
+  obj: TObject,
+  key: TKey,
+): TObject[TKey] {
+  return obj[key];
+}
+
+const userData = {
+  name: "neko",
+  age: 30,
+  active: true,
+};
+//viết 1 hàm hận vào 1 object -> và tham số thứ 2 là tự động điền các key
+
+const userNameData = getProperty(userData, "name");
+
+///menu chia 2 ngăn rõ rệt đồ uống và đồ ăn
+interface Menu {
+  drinks: {
+    coffee: "Cà phê đen";
+    tea: "Trà đào";
+    milk: "Sữa tươi";
+  };
+  food: {
+    bread: "Bánh mì";
+    pizza: "Pizza xúc xích";
+    burger: "Bánh mì kẹp";
+  };
+}
+//viết 1 cái hàm tự gợi ý category là drink hay food -> gợi ý là món gì ở trong cái category
+
+function orderMenu(category: string, item: string) {
+  console.log(`Goi mon ${item} trong ${category}`);
+}
+
+orderMenu("drinks", "bread");
+//tư duy
+// Chúng ta cần 1 biến N để đại cho category KH chọn
+// tham số 1: Category -> KH chọn ngăn nào -> ta đặt lên N -> N phải là 1 trong các ngăn của Menu (keyof Menu -> 'drinks' | 'food')
+//tham số 2 (item): KH chọn món gì: món ăn phải năm trong ngăn N vừa chọn tức là keyof Menu[N]
+// //drink -> Menu[drink] -> {
+//     coffee: "Cà phê đen";
+//     tea: "Trà đào";
+//     milk: "Sữa tươi";
+//   } -> keyof
+//Nhận vào tên ngăn tủ
+//tự động tìm chìa khóa của ngăn tủ đó
+function orderSmart<N extends keyof Menu>(category: N, item: keyof Menu[N]) {
+  console.log(`Đang order ....${String(item)}`);
+}
+
+orderSmart("drinks", "milk");
+
+orderSmart("food", "pizza");

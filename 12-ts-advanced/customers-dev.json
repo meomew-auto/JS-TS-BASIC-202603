@@ -1,0 +1,27 @@
+{
+  "full": {
+    "description": "All fields-dev",
+    "data": {
+      "company": "Auto PW",
+      "vat": "VAT0000000",
+      "city": "Ha Noi",
+      "state": "HN",
+      "zip": "100000"
+    }
+  },
+  "minimal": {
+    "description": "Required field-dev",
+    "data": {
+      "company": "Auto PW",
+      "vat": "VAT0000000"
+    }
+  },
+  "addressDataset": {
+    "description": "Datatest cho data-driven-dev",
+    "data": [
+      { "city": "New York", "country": "US" },
+      { "city": "HCM", "country": "VN" },
+      { "city": "DN", "country": "VN" }
+    ]
+  }
+}
